@@ -1,19 +1,31 @@
 <template>
   <div class="home">
     <home-header></home-header>
+    <home-List></home-List>
+    <home-nav :activeIndex="1"></home-nav>
   </div>
 </template>
 
 <script>
 import HomeHeader from './components/Header'
+import HomeList from './components/List'
+import HomeNav from '../common/Nav'
 export default {
   name: 'Home',
   components: {
-    HomeHeader
+    HomeHeader,
+    HomeList,
+    HomeNav
+  },
+  data () {
+    return {}
   }
 }
 </script>
 
-<style>
-
+<style scoped>
+  .home{
+    width: 10rem;
+    margin: 0 auto;
+  }
 </style>

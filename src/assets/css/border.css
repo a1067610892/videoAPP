@@ -2,7 +2,7 @@
 .border,
 .border-top,
 .border-right,
-.border-bottom,
+.border_bottom,
 .border-left,
 .border-topbottom,
 .border-rightleft,
@@ -15,7 +15,7 @@
 .border::before,
 .border-top::before,
 .border-right::before,
-.border-bottom::before,
+.border_bottom::before,
 .border-left::before,
 .border-topbottom::before,
 .border-topbottom::after,
@@ -48,7 +48,7 @@
     transform-origin: 0 0;
 }
 .border-top::before,
-.border-bottom::before,
+.border_bottom::before,
 .border-topbottom::before,
 .border-topbottom::after,
 .border-topleft::before,
@@ -85,7 +85,7 @@
     border-right: 1px solid #eaeaea;
     transform-origin: 100% 0;
 }
-.border-bottom::before,
+.border_bottom::before,
 .border-topbottom::after,
 .border-rightbottom::after,
 .border-bottomleft::before {
@@ -111,7 +111,7 @@
 .border-topright::after {
     right: 0;
 }
-.border-bottom::before,
+.border_bottom::before,
 .border-topbottom::after,
 .border-rightbottom::after,
 .border-bottomleft::after {
@@ -133,7 +133,7 @@
         transform: scale(.5);
     }
     .border-top::before,
-    .border-bottom::before,
+    .border_bottom::before,
     .border-topbottom::before,
     .border-topbottom::after,
     .border-topleft::before,
@@ -149,7 +149,7 @@
     .border-topleft::after,
     .border-rightbottom::before,
     .border-topright::after,
-    .border-bottomleft::after {
+    .border_bottomleft::after {
         transform: scaleX(.5);
     }
 }
@@ -160,7 +160,7 @@
         transform: scale(.33333);
     }
     .border-top::before,
-    .border-bottom::before,
+    .border_bottom::before,
     .border-topbottom::before,
     .border-topbottom::after,
     .border-topleft::before,
