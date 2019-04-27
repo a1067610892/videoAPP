@@ -1,16 +1,18 @@
 <template>
   <div class="lookup">
-    222
-    <home-nav :activeIndex="2"></home-nav>
+    <lookup-header></lookup-header>
+    <common-nav :activeIndex="2"></common-nav>
   </div>
 </template>
 
 <script>
-import HomeNav from '../common/Nav'
+import CommonNav from '../common/Nav'
+import LookupHeader from './components/Header'
 export default {
   name: 'Lookup',
   components: {
-    HomeNav
+    CommonNav,
+    LookupHeader
   },
   data () {
     return {}
