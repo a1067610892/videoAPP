@@ -4,12 +4,15 @@ import Vue from 'vue'
 import App from './App'
 import router from './router'
 import axios from 'axios'
+import fastClick from 'fastclick'
 import '@/assets/css/reset.css'
+import '@/assets/font/iconfont.css'
 import '@/assets/css/border.css'
 import 'lib-flexible'
 
 Vue.prototype.axios = axios
 Vue.config.productionTip = false
+fastClick.attach(document.body)
 
 /* eslint-disable no-new */
 new Vue({

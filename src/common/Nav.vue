@@ -1,5 +1,5 @@
 <template>
-  <div class="footer">
+  <div class="footer border-top">
     <div class="dome" @click="jump('/',1,'Home')" :class="{active : activeIndex == 1}">
       <span>热映</span>
     </div>

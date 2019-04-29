@@ -36,6 +36,9 @@ export default {
     text-align: center;
     padding: .133333rem .266667rem;
   }
+  .dome:last-child {
+    padding-bottom: 1.2rem !important;
+  }
   .List .dome .img {
     width: 100%;
     height: 4rem;
