@@ -24,7 +24,7 @@ export default {
 <style scoped>
   .List {
     width: 10rem;
-    margin: 0 auto;
+    margin: 2rem auto 0 auto;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;

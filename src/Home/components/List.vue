@@ -93,8 +93,9 @@ export default {
   .dome .list-img {
     width: 2.533333rem;
     height: 3.2rem;
-    padding: .533333rem .266667rem;
+    margin: .533333rem .266667rem;
     float: left;
+    border-radius: .2rem;
   }
   .dome .right {
     width: 6.9rem;

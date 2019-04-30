@@ -23,6 +23,9 @@ export default {
     width: 10rem;
     height: 2rem;
     text-align: center;
+    position: fixed;
+    top: 0;
+    background: #FFF;
   }
   .header input {
     width: 9rem;
