@@ -1,16 +1,16 @@
 <template>
   <div class="my">
-    <header class="header">
+    <header class="header" @click="login">
       <span class="span iconfont">&#xe64e;</span>
       <span class="font">请登录</span>
     </header>
     <nav class="nav border_bottom">
-      <span>讨论</span>
-      <span>想看</span>
-      <span>在看</span>
-      <span>看过</span>
-      <span>影评</span>
-      <span>影人</span>
+      <span @click="active(0)" :class="{border_bottom: index == 0}">讨论</span>
+      <span @click="active(1)" :class="{border_bottom: index == 1}">想看</span>
+      <span @click="active(2)" :class="{border_bottom: index == 2}">在看</span>
+      <span @click="active(3)" :class="{border_bottom: index == 3}">看过</span>
+      <span @click="active(4)" :class="{border_bottom: index == 4}">影评</span>
+      <span @click="active(5)" :class="{border_bottom: index == 5}">影人</span>
     </nav>
     <home-nav :activeIndex="3"></home-nav>
   </div>
@@ -24,7 +24,17 @@ export default {
     HomeNav
   },
   data () {
-    return {}
+    return {
+      index: 0
+    }
+  },
+  methods: {
+    active (i) {
+      this.index = i
+    },
+    login () {
+      this.$router.push({name: 'Login', path: '/Login'})
+    }
   }
 }
 </script>
@@ -60,6 +70,9 @@ export default {
     flex: 1;
     text-align: center;
     color: #999;
+  }
+  .nav .border_bottom::before {
+    border-color: black;
   }
   .font {
     width: 1.333333rem;

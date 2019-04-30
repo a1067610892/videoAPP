@@ -3,6 +3,7 @@ import Router from 'vue-router'
 import Home from '@/Home/Home'
 import My from '@/My/My'
 import Lookup from '@/Lookup/Lookup'
+import Login from '@/Login/Login'
 
 Vue.use(Router)
 
@@ -20,6 +21,10 @@ export default new Router({
       path: '/Lookup',
       name: 'Lookup',
       component: Lookup
+    }, {
+      path: '/Login',
+      name: 'Login',
+      component: Login
     }
   ]
 })
