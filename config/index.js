@@ -18,6 +18,13 @@ module.exports = {
           '/api':''
         }
       },
+      '/video':{
+        target: 'http://api.douban.com/v2/movie/subject',
+        changeOrigin:true,
+        pathRewrite:{
+          '/video':''
+        }
+      },
     },
 
     // Various Dev Server settings

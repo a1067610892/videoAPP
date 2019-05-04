@@ -1,6 +1,6 @@
 <template>
   <div class="List">
-    <div class="dome" v-for="(item, index) in list" :key="index">
+    <div class="dome" v-for="(item, index) in list" :key="index" @click="details(item.id)">
       <img class="img" :src="item.images.large">
       <h1 class="title">{{item.title}}</h1>
       <span class="span" v-if="item.rating.average !== 0">{{(item.rating.average.toString()).length == 1 ? item.rating.average + '.0' : item.rating.average }}</span>
@@ -17,6 +17,17 @@ export default {
   },
   data () {
     return {}
+  },
+  methods: {
+    details (id) {
+      this.$router.push({
+        path: '/Details',
+        name: 'Details',
+        query: {
+          id: id
+        }
+      })
+    }
   }
 }
 </script>

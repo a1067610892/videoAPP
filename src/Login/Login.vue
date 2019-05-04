@@ -1,16 +1,17 @@
 <template>
   <div class="login">
     <span @click="Return" class="iconfont return">&#xe604;</span>
+    <h2 style="text-align:center">{{number}}</h2>
     <h1 class="title">欢迎来到豆瓣</h1>
-    <input class="text" type="text" placeholder="手机号">
-    <input class="password" type="text" placeholder="密码">
+    <input @click="hide" class="text" type="text" placeholder="手机号">
+    <input @click="hide" class="password" type="text" placeholder="密码">
     <button class="btn">登录</button>
     <div class="register">
       <span class="one active">注册豆瓣</span>
       <span class="two">|</span>
       <span class="one">忘记密码</span>
     </div>
-    <footer>
+    <footer v-show="footerShow">
       <span class="iconfont">&#xe610;</span>
       <span>QQ登录</span>
       <span class="center">|</span>
@@ -25,11 +26,22 @@ export default {
   name: 'Login',
   data () {
     return {
+      /* 解决移动端小键盘导致定位出错 */
+      footerShow: true,
+      number: 0
     }
+  },
+  mounted () {
+    this.hide()
   },
   methods: {
     Return () {
       this.$router.push({name: 'My', path: '/My'})
+    },
+    /* 解决移动端小键盘 */
+    hide () {
+      this.number = window.document.body.clientHeight
+      console.log(window.document.body.clientHeight)
     }
   }
 }
@@ -39,6 +51,9 @@ export default {
   .login {
     width: 10rem;
     margin: 0 auto;
+    position: absolute;
+    height: 100%;
+    top: 0;
   }
   .return {
     height: 1.066667rem;
@@ -101,8 +116,9 @@ export default {
     width: 10rem;
     height: 1.066667rem;
     line-height: 1.066667rem;
-    position: fixed;
+    position: absolute;
     bottom: 0;
+    left: 0;
     text-align: center;
   }
   footer .center {
