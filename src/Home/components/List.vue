@@ -8,7 +8,7 @@
             <h1 class="list-title">{{item.title}}</h1>
             <h2 class="average">{{item.rating.average == 0 ? '暂无评分' : item.rating.average}}</h2>
             <div class="director">导演：{{item.directors[0].name}}</div>
-            <div class="performer"><span>主演：</span><span v-for="(performer, index) in item.casts" :key="index">{{performer.name}}<span v-if="index + 1 != item.casts.length"> / </span></span></div>
+            <div class="performer" v-if="item.casts.length !== 0"><span>主演：</span><span v-for="(performer, index) in item.casts" :key="index">{{performer.name}}<span v-if="index + 1 != item.casts.length"> / </span></span></div>
           </div>
           <div class="list-right">
             <span class="count">{{item.collect_count}}人看过</span>

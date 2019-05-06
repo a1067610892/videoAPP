@@ -3,6 +3,7 @@
     <details-header :list="list"></details-header>
     <details-content :list="list"></details-content>
     <details-casts :list="list"></details-casts>
+    <comment :index="0"></comment>
   </div>
 </template>
 
@@ -10,12 +11,14 @@
 import DetailsHeader from './components/Header'
 import DetailsContent from './components/Content'
 import DetailsCasts from './components/Casts'
+import Comment from '@/common/comment'
 export default {
   name: 'Details',
   components: {
     DetailsHeader,
     DetailsContent,
-    DetailsCasts
+    DetailsCasts,
+    Comment
   },
   data () {
     return {

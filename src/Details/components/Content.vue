@@ -36,7 +36,7 @@
     </div>
     <div class="footer border_bottom">
       <h3>简介</h3>
-      <p :class="{Receive: Receivetrue == true}">{{list.summary}}</p>
+      <p :class="{Receive: Receivetrue == true, height: Receivetrue == true}">{{list.summary}}</p>
       <span style="color:#179717" v-if="list.summary.length > 84" @click="hide" class="unfold">{{unfold}}</span>
     </div>
   </div>
@@ -149,6 +149,9 @@ export default {
     line-height: .666667rem;
     text-align: right;
     color: #999;
+  }
+  .height {
+    height: 1.333333rem;
   }
   .Receive {
     overflow: hidden;
