@@ -45,14 +45,14 @@ export default {
         this.getData()
       }
     },
-    // getData () {
-    //   this.axios.get(`/api/in_theaters?apikey=0b2bdeda43b5688921839c8ecb20399b&city=北京&start=0&count=39&client=&udid=""`).then((res) => {
-    //     console.log(res)
-    //     this.list = res.data.subjects
-    //     this.addZero(this.list)
-    //     this.count(this.list)
-    //   })
-    // },
+    getData () {
+      this.axios.get(`/api/in_theaters?apikey=0b2bdeda43b5688921839c8ecb20399b&city=北京&start=0&count=39&client=&udid=""`).then((res) => {
+        console.log(res)
+        this.list = res.data.subjects
+        this.addZero(this.list)
+        this.count(this.list)
+      })
+    },
     details (id) {
       this.$router.push({
         path: '/Details',
@@ -62,13 +62,13 @@ export default {
         }})
     },
     /* APP */
-    getData () {
-      this.axios.get(`https://api.douban.com/v2/movie/in_theaters?apikey=0b2bdeda43b5688921839c8ecb20399b&city=北京&start=0&count=39&client=&udid=""`).then((res) => {
-        this.list = res.data.subjects
-        this.addZero(this.list)
-        this.count(this.list)
-      })
-    },
+    // getData () {
+    //   this.axios.get(`https://api.douban.com/v2/movie/in_theaters?apikey=0b2bdeda43b5688921839c8ecb20399b&city=北京&start=0&count=39&client=&udid=""`).then((res) => {
+    //     this.list = res.data.subjects
+    //     this.addZero(this.list)
+    //     this.count(this.list)
+    //   })
+    // },
     /* 评分人数简化 */
     count (arr) {
       for (let i = 0; i < arr.length; i++) {

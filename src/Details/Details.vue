@@ -45,36 +45,36 @@ export default {
   },
   methods: {
     details (id) {
-      // this.axios.get(`/video/${id}?apikey=0b2bdeda43b5688921839c8ecb20399b&city=%E5%8C%97%E4%BA%AC&client=&udid=`).then((res) => {
-      //   this.list = res.data
-      //   console.log(res)
-      // })
-      /* app */
-      this.axios.get(`http://api.douban.com/v2/movie/subject/${id}?apikey=0b2bdeda43b5688921839c8ecb20399b&city=%E5%8C%97%E4%BA%AC&client=&udid=`).then((res) => {
+      this.axios.get(`/video/${id}?apikey=0b2bdeda43b5688921839c8ecb20399b&city=%E5%8C%97%E4%BA%AC&client=&udid=`).then((res) => {
         this.list = res.data
+        console.log(res)
       })
-      /* 获取影评 */
-      // this.axios.get(`/video/${id}/reviews?apikey=0b2bdeda43b5688921839c8ecb20399b`).then((res) => {
-      //   console.log(res, '影评')
-      //   this.FilmArr = res.data.reviews
+      /* app */
+      // this.axios.get(`http://api.douban.com/v2/movie/subject/${id}?apikey=0b2bdeda43b5688921839c8ecb20399b&city=%E5%8C%97%E4%BA%AC&client=&udid=`).then((res) => {
+      //   this.list = res.data
       // })
-      /* APP */
-      this.axios.get(`http://api.douban.com/v2/movie/subject/${id}/reviews?apikey=0b2bdeda43b5688921839c8ecb20399b`).then((res) => {
+      /* 获取影评 */
+      this.axios.get(`/video/${id}/reviews?apikey=0b2bdeda43b5688921839c8ecb20399b`).then((res) => {
+        console.log(res, '影评')
         this.FilmArr = res.data.reviews
       })
+      /* APP */
+      // this.axios.get(`http://api.douban.com/v2/movie/subject/${id}/reviews?apikey=0b2bdeda43b5688921839c8ecb20399b`).then((res) => {
+      //   this.FilmArr = res.data.reviews
+      // })
       /* 获取剧照 */
       // this.axios.get(`/video/${id}/photos?apikey=0b2bdeda43b5688921839c8ecb20399b`).then((res) => {
       //   console.log(res)
       // })
       /* 获取短评 */
-      // this.axios.get(`/video/${id}/comments?apikey=0b2bdeda43b5688921839c8ecb20399b`).then((res) => {
-      //   console.log(res, '短评')
-      //   this.ShortArr = res.data.comments
-      // })
-      /* APP */
-      this.axios.get(`http://api.douban.com/v2/movie/subject/${id}/comments?apikey=0b2bdeda43b5688921839c8ecb20399b`).then((res) => {
+      this.axios.get(`/video/${id}/comments?apikey=0b2bdeda43b5688921839c8ecb20399b`).then((res) => {
+        console.log(res, '短评')
         this.ShortArr = res.data.comments
       })
+      /* APP */
+      // this.axios.get(`http://api.douban.com/v2/movie/subject/${id}/comments?apikey=0b2bdeda43b5688921839c8ecb20399b`).then((res) => {
+      //   this.ShortArr = res.data.comments
+      // })
     }
   }
 }
