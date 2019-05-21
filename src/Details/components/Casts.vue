@@ -42,7 +42,6 @@ export default {
   }
   .item {
     width: 1.6rem;
-    height: 100%;
     float: left;
     margin: .133333rem .133333rem 0 0;
     text-align: center;

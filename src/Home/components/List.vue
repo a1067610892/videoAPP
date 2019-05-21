@@ -7,7 +7,7 @@
           <div class="list-left">
             <h1 class="list-title">{{item.title}}</h1>
             <h2 class="average">{{item.rating.average == 0 ? '暂无评分' : item.rating.average}}</h2>
-            <div class="director">导演：{{item.directors[0].name}}</div>
+            <div class="director" v-if="item.directors[0]">导演：{{item.directors[0].name}}</div>
             <div class="performer" v-if="item.casts.length !== 0"><span>主演：</span><span v-for="(performer, index) in item.casts" :key="index">{{performer.name}}<span v-if="index + 1 != item.casts.length"> / </span></span></div>
           </div>
           <div class="list-right">
@@ -49,6 +49,14 @@ export default {
       this.axios.get(`/api/in_theaters?apikey=0b2bdeda43b5688921839c8ecb20399b&city=北京&start=0&count=39&client=&udid=""`).then((res) => {
         console.log(res)
         this.list = res.data.subjects
+        // for (let i = 0; i < this.list.length; i++) {
+        //   if (this.list[i].directors == undefined) {
+        //     console.log(i, '空')
+        //     console.log(this.list[i], '空')
+        //   }
+        //   console.log(this.list[i].directors[0].name, i)
+        //   console.log(this.list.length, '总长度')
+        // }
         this.addZero(this.list)
         this.count(this.list)
       })
