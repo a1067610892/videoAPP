@@ -3,11 +3,12 @@
     <details-header :list="list"></details-header>
     <details-content :list="list"></details-content>
     <details-casts :list="list"></details-casts>
-    <nav class="nav">
+    <nav class="nav border_bottom">
       <a class="border_bottom">评论</a>
       <a>讨论</a>
     </nav>
     <comment :listArr="ShortArr"></comment>
+    <details-filmreview :list="FilmArr"></details-filmreview>
   </div>
 </template>
 
@@ -15,6 +16,7 @@
 import DetailsHeader from './components/Header'
 import DetailsContent from './components/Content'
 import DetailsCasts from './components/Casts'
+import DetailsFilmreview from './components/Filmreview'
 import Comment from '@/common/comment'
 export default {
   name: 'Details',
@@ -22,7 +24,8 @@ export default {
     DetailsHeader,
     DetailsContent,
     DetailsCasts,
-    Comment
+    Comment,
+    DetailsFilmreview
   },
   data () {
     return {
@@ -89,7 +92,7 @@ export default {
     width: 10rem;
     height: 1.066667rem;
     line-height: 1.066667rem;
-    background: #eee;
+    background: #ccc;
     display: flex;
   }
   .nav a {
@@ -97,6 +100,12 @@ export default {
     text-align: center;
     height: 1.066667rem;
     color: black;
+  }
+  .border-top::before {
+    border-color: #ccc;
+  }
+  .border_bottom::before {
+    border-color: #ccc;
   }
   .nav .border_bottom::before {
     border-color: black;

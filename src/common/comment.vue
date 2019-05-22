@@ -5,7 +5,7 @@
       <button class="header-right border">写短评</button>
     </header>
     <div class="center">
-      <div class="box" v-for="(item, index) in listArr" :key="index">
+      <div v-if="index < 4" class="box" v-for="(item, index) in listArr" :key="index">
         <div class="center-left">
           <img class="userhead" :src="item.author.avatar">
         </div>
@@ -18,6 +18,9 @@
           <p>{{item.content}}</p>
           <span class="font">{{(new Date(item.created_at).getMonth()+1)}}月{{(new Date(item.created_at).getDate())}}日</span>
         </div>
+      </div>
+      <div class="footer border_bottom">
+        全部短评{{listArr.length}}个
       </div>
     </div>
   </div>
@@ -117,5 +120,15 @@ export default {
     font-size: .32rem;
     margin-top: .133333rem;
     display: block;
+  }
+  .footer {
+    text-align: center;
+    color: #179717;
+    font-size: .32rem;
+    height: 1.066667rem;
+    line-height: 1.066667rem;
+  }
+  .border_bottom::before {
+    border-color: #ccc;
   }
 </style>
