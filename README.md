@@ -1,4 +1,4 @@
-# douban
+# 豆瓣电影（仿制）
 
 > A Vue.js project
 
