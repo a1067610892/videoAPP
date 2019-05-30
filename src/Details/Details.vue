@@ -7,8 +7,8 @@
       <a class="border_bottom">评论</a>
       <a>讨论</a>
     </nav>
-    <comment :listArr="ShortArr"></comment>
-    <details-filmreview :list="FilmArr"></details-filmreview>
+    <comment :listArr="ShortArr" :name="movieName" :id="videoId"></comment>
+    <details-filmreview :list="FilmArr" :name="movieName"></details-filmreview>
   </div>
 </template>
 
@@ -40,7 +40,9 @@ export default {
         }]
       },
       ShortArr: [],
-      FilmArr: []
+      FilmArr: [],
+      movieName: '',
+      videoId: ''
     }
   },
   mounted () {
@@ -50,6 +52,8 @@ export default {
     details (id) {
       this.axios.get(`/video/${id}?apikey=0b2bdeda43b5688921839c8ecb20399b&city=%E5%8C%97%E4%BA%AC&client=&udid=`).then((res) => {
         this.list = res.data
+        this.videoId = id
+        this.movieName = res.data.title
         console.log(res)
       })
       /* app */

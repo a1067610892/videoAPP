@@ -19,7 +19,7 @@
           <span class="font">{{(new Date(item.created_at).getMonth()+1)}}月{{(new Date(item.created_at).getDate())}}日</span>
         </div>
       </div>
-      <div class="footer border_bottom">
+      <div class="footer border_bottom" @click="content">
         全部短评{{listArr.length}}个
       </div>
     </div>
@@ -29,13 +29,26 @@
 <script>
 export default {
   props: {
-    listArr: Array
+    listArr: Array,
+    name: String,
+    id: String
   },
   name: 'comment',
   data () {
     return {}
   },
-  methods: { }
+  methods: {
+    content () {
+      this.$router.push({
+        path: '/Content',
+        name: 'Content',
+        query: {
+          item: JSON.stringify(this.listArr),
+          movieName: this.name,
+          nameId: this.id
+        }})
+    }
+  }
 }
 </script>
 

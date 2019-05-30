@@ -11,7 +11,7 @@
         <p>{{item.summary}}</p>
         <div class="paragraph"><span>{{item.useful_count}} / {{item.useful_count + item.useless_count}}</span><span>有用</span></div>
       </div>
-      <div class="footer">
+      <div class="footer" @click="content">
         全部影评{{list.length}}个
       </div>
     </div>
@@ -21,11 +21,23 @@
 <script>
 export default {
   props: {
-    list: Array
+    list: Array,
+    name: String
   },
   name: 'filmreview',
   data () {
     return {
+    }
+  },
+  methods: {
+    content () {
+      this.$router.push({
+        path: '/FilmDetails',
+        name: 'FilmDetails',
+        query: {
+          item: JSON.stringify(this.list),
+          movieName: this.name
+        }})
     }
   }
 }
