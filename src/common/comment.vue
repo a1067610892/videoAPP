@@ -37,6 +37,8 @@ export default {
   data () {
     return {}
   },
+  mounted () {
+  },
   methods: {
     content () {
       this.$router.push({

@@ -36,12 +36,17 @@ export default {
   },
   mounted () {
     this.list = JSON.parse(this.$route.query.item)
-    console.log(this.list)
     this.movieName = this.$route.query.movieName
   },
   methods: {
     Return () {
-      this.$router.push({name: 'Home', path: '/'})
+      this.$router.push({
+        name: 'Home',
+        path: '/',
+        query: {
+          id: this.$route.query.nameId
+        }
+      })
     }
   }
 }

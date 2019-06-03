@@ -1,7 +1,7 @@
 <template>
   <div>
     <div class="list" v-if="onLine == true">
-      <div class="dome border_bottom" v-for="(item, index) in list" :key="index" @click="details(item.id)">
+      <div class="dome border_bottom" v-for="(item, index) in list" :key="index" @click="details(item.id,index)">
         <img class="list-img" :src="item.images.large">
         <div class="right">
           <div class="list-left">
@@ -47,18 +47,18 @@ export default {
     },
     getData () {
       this.axios.get(`/api/in_theaters?apikey=0b2bdeda43b5688921839c8ecb20399b&city=北京&start=0&count=39&client=&udid=""`).then((res) => {
-        console.log(res)
         this.list = res.data.subjects
         this.addZero(this.list)
         this.count(this.list)
       })
     },
-    details (id) {
+    details (id, index) {
       this.$router.push({
         path: '/Details',
         name: 'Details',
         query: {
-          id: id
+          id: id,
+          listIndex: index
         }})
     },
     /* APP */

@@ -22,7 +22,8 @@
 export default {
   props: {
     list: Array,
-    name: String
+    name: String,
+    id: String
   },
   name: 'filmreview',
   data () {
@@ -36,7 +37,8 @@ export default {
         name: 'FilmDetails',
         query: {
           item: JSON.stringify(this.list),
-          movieName: this.name
+          movieName: this.name,
+          nameId: this.id
         }})
     }
   }
