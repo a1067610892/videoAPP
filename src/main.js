@@ -6,8 +6,8 @@ import router from './router'
 import axios from 'axios'
 import fastClick from 'fastclick'
 import '@/assets/css/reset.css'
-import '@/assets/font/iconfont.css'
 import '@/assets/css/border.css'
+import '@/assets/font/iconfont.css'
 import 'lib-flexible'
 
 Vue.prototype.axios = axios

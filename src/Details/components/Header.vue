@@ -1,7 +1,14 @@
 <template>
   <div>
-    <div class="header">
+    <div v-show="hideshow" class="header" :style="opacityStyle">
       <span @click="Return" class="iconfont return">&#xe604;</span>
+      <span class="font">电影</span>
+      <span class="iconfont return"></span>
+    </div>
+    <div v-show="!hideshow" class="header">
+      <span @click="Return" class="iconfont return">&#xe604;</span>
+      <span class="font">{{list.title}}</span>
+      <span class="iconfont return"></span>
     </div>
     <div class="imgbox">
       <img :src="list.images.large">
@@ -16,12 +23,35 @@ export default {
   },
   name: 'DetailsHeader',
   data () {
-    return {}
+    return {
+      hideshow: true,
+      opacityStyle: {
+        background: 'rgba( 153,153,153,0)'
+      }
+    }
   },
   methods: {
     Return () {
       this.$router.push({name: 'Home', path: '/'})
+    },
+    handleScroll (event) {
+      this.num = document.documentElement.scrollTop
+      const top = document.documentElement.scrollTop
+      console.log(event)
+      if (top > 280) {
+        this.opacityStyle = { background: 'rgba( 153,153,153,1)' }
+        this.hideshow = false
+      } else {
+        this.opacityStyle = { background: 'rgba( 153,153,153,0.2)' }
+        this.hideshow = true
+      }
     }
+  },
+  mounted () {
+    window.addEventListener('scroll', this.handleScroll)
+  },
+  unmounted () {
+    window.removeEventListener('scroll', this.handleScroll)
   }
 }
 </script>
@@ -36,9 +66,19 @@ export default {
     position: fixed;
     top: 0;
     z-index: 99;
+    display: flex;
+  }
+  .header .font {
+    height: 100%;
+    line-height: 1.333333rem;
+    display: inline-block;
+    flex: 1;
+    text-align: center;
+    color: #FFF;
+    font-size: .426667rem;
   }
   .return {
-    width: 1.066667rem;
+    width: 1.6rem;
     height: 100%;
     line-height: 1.333333rem;
     display: inline-block;
@@ -50,7 +90,7 @@ export default {
     width: 10rem;
     height: 6rem;
     text-align: center;
-    margin-top: 1.333333rem;
+    padding-top: 1.333333rem;
     background: #999;
   }
   .imgbox img {
