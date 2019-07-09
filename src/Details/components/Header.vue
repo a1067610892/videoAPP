@@ -37,7 +37,6 @@ export default {
     handleScroll (event) {
       this.num = document.documentElement.scrollTop
       const top = document.documentElement.scrollTop
-      console.log(event)
       if (top > 280) {
         this.opacityStyle = { background: 'rgba( 153,153,153,1)' }
         this.hideshow = false

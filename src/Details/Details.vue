@@ -71,7 +71,6 @@ export default {
       // })
       /* 获取影评 */
       this.axios.get(`/video/${id}/reviews?apikey=0b2bdeda43b5688921839c8ecb20399b`).then((res) => {
-        console.log(res, '影评')
         this.FilmArr = res.data.reviews
         this.film.push(this.FilmArr)
       })
@@ -86,7 +85,6 @@ export default {
       // })
       /* 获取短评 */
       this.axios.get(`/video/${id}/comments?apikey=0b2bdeda43b5688921839c8ecb20399b`).then((res) => {
-        console.log(res, '短评')
         this.ShortArr = res.data.comments
         this.short.push(this.ShortArr)
       })
@@ -103,11 +101,7 @@ export default {
     }
   },
   activated () {
-    // console.log(this.listId)
     if (this.listId[this.$route.query.listIndex] !== this.$route.query.id) {
-      // console.log(this.arrList)
-      // console.log(this.short)
-      // console.log(this.film)
       this.details(this.$route.query.id)
       this.listId.push(this.$route.query.id)
     } else if (this.listId[this.$route.query.listIndex] === this.$route.query.id && this.indexId !== 0) {
